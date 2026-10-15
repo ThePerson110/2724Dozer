@@ -38,4 +38,8 @@ public class ArmPitch extends SubsystemBase {
                 },
                 Set.of(subsystem));
     }
+
+    public Command moveArmShovel( double power){
+        return runEnd(()-> armPitch.set(power),()-> armPitch.set(0) );
+    }
 }

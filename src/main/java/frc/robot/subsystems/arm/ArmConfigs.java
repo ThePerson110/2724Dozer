@@ -7,8 +7,8 @@ import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.StaticFeedforwardSignValue;
 
 public class ArmConfigs {
-    public static int MOTOR_1_ID = 1;
-    public static int MOTOR_2_ID = 2;
+    public static int MOTOR_1_ID = 54;
+    public static int MOTOR_2_ID = 55;
 
     public static Slot0Configs ARM_CONFIGS = new Slot0Configs()
             .withKP(0)

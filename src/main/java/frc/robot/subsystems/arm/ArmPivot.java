@@ -15,7 +15,7 @@ public class ArmPivot extends SubsystemBase {
     private final PositionVoltage armPosition = new PositionVoltage(0);
 
     public ArmPivot() {
-        armPivot = new TalonFX(ArmConfigs.MOTOR_1_ID, Constants.rioBus);
+        armPivot = new TalonFX(ArmConfigs.MOTOR_2_ID, Constants.rioBus);
         armPivot.getConfigurator().apply(ArmConfigs.WRIST_CONFIGS);
     }
 
@@ -34,4 +34,9 @@ public class ArmPivot extends SubsystemBase {
                 },
                 Set.of(subsystem));
     }
+     public Command moveArmPivot( double power){
+        return runEnd(()-> armPivot.set(power),()-> armPivot.set(0) );
+    }
+
+
 }

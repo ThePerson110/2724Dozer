@@ -35,13 +35,14 @@ public class Drive extends Command {
     // controllable.
     @Override
     public void execute() {
-        driveSubsystem.driveTank(-controller.getLeftY() * DRIVE_SCALING, -controller.getRightX() * ROTATION_SCALING);
+        // use tankdrive to test and chezy drive after motor testing is complete
+        driveSubsystem.cheesyDrive(controller.getRightY() * DRIVE_SCALING, -controller.getLeftY() * DRIVE_SCALING);
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        driveSubsystem.driveTank(0, 0);
+        driveSubsystem.cheesyDrive(0, 0);
     }
 
     // Returns true when the command should end.
